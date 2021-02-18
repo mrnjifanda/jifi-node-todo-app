@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!--meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap-datepicker.standalone.min.css">
+
+  <title>Edit - Jifi Todo</title>
+</head>
+
+<body>
+
+  <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+  
+    <!-- App title section -->
+    <div class="row m-1 p-4">
+      <div class="col">
+        <div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
+          <i class="fa fa-pencil bg-primary text-white rounded p-2"></i>
+          <u>Edit | Jifi Todo</u>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create todo section -->
+    <div class="row m-1 p-3">
+      <div class="col col-11 mx-auto">
+        <form action="/edit/<%= task._id %>?_method=PUT" method="post" class="add-task">
+          <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+            <div class="col">
+              <input class="form-control form-control-lg add-todo-input" name="title" type="text" placeholder="Title task .." value="<%= task.title %>" required>
+              <input class="form-control form-control-lg add-todo-input" name="date" type="datetime-local" placeholder="Date .." value="<%= task.date %>" required>
+              <textarea class="form-control form-control-lg add-todo-input" name="description" placeholder="Description .." required><%= task.description %></textarea>
+            </div>
+            <div class="col-auto px-0 mx-0 mr-2">
+              <input type="hidden" name="_method" value="PUT">
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="p-2 mx-4 border-black-25 border-bottom"></div>
+    
+    <div class="row">
+        <div class="col-col-11 pt-2 pl-5">
+            <a href="/"><i class="fa fa-dashboard"></i> Back to Home</a>
+        </div>
+    </div>
+  </div>
+
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/popper.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/bootlint.min.js"></script>
+  <script src="/javascripts/bootstrap-datepicker.min.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>
